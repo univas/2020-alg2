@@ -1,32 +1,14 @@
 programa {
-	funcao inicio() { //exercício 04 da lista 01
+	funcao inicio() { //exercÃ­cio 04 da lista 01
 		inteiro ano
 		escreva("Digite o ano: ")
 		leia(ano)
-		logico bissexto = ehBissexto_V1(ano)
-		escreva("O ano ", ano, " é bissexto? ", bissexto)
+		logico bissexto = ehBissexto(ano)
+		escreva("O ano ", ano, " Ã© bissexto? ", bissexto)
 	}
 	
-	funcao logico ehBissexto_V1(inteiro ano) { //TODO: Exercício: corrigir a lógica. Usar OU ao invés de E
-	    logico ehBissexto = falso
-	    
-	    se (ano % 4 == 0) {//condição 1: se o ano for múltiplo de 4
-	        se (ano % 100 == 0) { // condição E e condição 2 (ano for múltiplo de 100)
-	            se (ano % 400 == 0) {// condição 1 E condição 2 E condição 3 (ano for múltiplo de 400)
-        	        ehBissexto = verdadeiro
-	            }
-	        }
-	    }
+	funcao logico ehBissexto(inteiro ano) {
+	    logico ehBissexto = (ano % 4 == 0 ou ano % 100 == 0 ou ano % 400 == 0) //nÃ£o precisa do parÃªntesis
 	    retorne ehBissexto
-	}
-
-	funcao logico ehBissexto_V2(inteiro ano) { //TODO: atualizar para o cálculo completo
-	    logico ehBissexto = ano % 4 == 0
-	    retorne ehBissexto
-	}
-
-	funcao logico ehBissexto_V3(inteiro ano) { //TODO: atualizar para o cálculo completo
-	    retorne ano % 4 == 0
 	}
 }
-
