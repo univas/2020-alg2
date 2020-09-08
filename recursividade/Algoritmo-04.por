@@ -1,5 +1,5 @@
 programa {
-	funcao inicio() { //exercício 04 da parte 03
+	funcao inicio() { //exercício 03 da parte 03
 		inteiro x, y, resultado
 		escreva("Digite o valor de x: ")
 		leia(x)
