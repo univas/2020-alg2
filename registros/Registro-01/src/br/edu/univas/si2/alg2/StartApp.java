@@ -15,9 +15,16 @@ public class StartApp {
 		System.out.println("Cidade: " + meuEndereco.cidade);
 		System.out.println("Estado: " + meuEndereco.estado);
 		
-		System.out.println(meuEndereco);
+		//System.out.println(meuEndereco);
 		
 		imprimirEndereco(meuEndereco);
+		
+		Endereco enderecoDeMeuIrmao = new Endereco();
+		enderecoDeMeuIrmao.numero = 270;
+		enderecoDeMeuIrmao.cidade = "Santa Rita";
+		enderecoDeMeuIrmao.estado = "Minas Gerais";
+		
+		imprimirEndereco(enderecoDeMeuIrmao);
 	}
 	
 	public static void imprimirEndereco(Endereco enderecoParaImprimir) {
