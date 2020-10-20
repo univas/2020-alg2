@@ -1,6 +1,6 @@
 package br.edu.univas.si2.alg2.ex02;
 
-public class StartApp02 {
+public class StartApp03 {
 
 	public static void main(String[] args) {
 
@@ -45,24 +45,36 @@ public class StartApp02 {
 		fimEv5.hora = 2;
 		fimEv5.minuto = 20;
 		
-		int duracaoEv1 = duracao(inicioEv1, fimEv1);
-		System.out.println("Duração do Evento 1: " + duracaoEv1); //duração de 5 min
-		System.out.println("Duração do Evento 2: " + duracao(inicioEv2, fimEv2)); //duração de 1h e 10min
-		System.out.println("Duração do Evento 3: " + duracao(inicioEv3, fimEv3)); //duração de 50 min
+		HoraMinuto duracaoEv1 = calcularDuracao(inicioEv1, fimEv1);
+		imprimir(duracaoEv1, 1); //duração de 5 min
 		
-		System.out.println("Duração do Evento 4: " + duracao(inicioEv4, fimEv4)); //
-		System.out.println("Duração do Evento 5: " + duracao(inicioEv5, fimEv5)); //
+		imprimir(calcularDuracao(inicioEv2, fimEv2), 2); //duração de 1h e 10min
+		imprimir(calcularDuracao(inicioEv3, fimEv3), 3); //duração de 50 min
+		imprimir(calcularDuracao(inicioEv4, fimEv4), 4); //3h e 30 min
+		imprimir(calcularDuracao(inicioEv5, fimEv5), 5); //2h  e 30 min
 
 	}
+	
+	public static void imprimir(HoraMinuto duracaoEvento, int idDoEvento) {
+		System.out.println("Duração do Evento " 
+				+ idDoEvento + ": " 
+				+ duracaoEvento.hora + " h " 
+				+ duracaoEvento.minuto + " min");
+	}
 
-	public static int duracao(HoraMinuto inicio, HoraMinuto fim) {
+	public static HoraMinuto calcularDuracao(HoraMinuto inicio, HoraMinuto fim) {
 		int duracaoDasHoras = fim.hora - inicio.hora;
 		int duracaoDosMinutos = fim.minuto - inicio.minuto;
 		
 		if(duracaoDasHoras < 0) {
 			duracaoDasHoras += 24;
 		}
-				
-		return duracaoDasHoras * 60 + duracaoDosMinutos;
+		//TODO: corrigir os bugs dos minutos negativos
+		
+		HoraMinuto resultadoDuracao = new HoraMinuto();
+		resultadoDuracao.hora = duracaoDasHoras;
+		resultadoDuracao.minuto = duracaoDosMinutos;
+		
+		return resultadoDuracao;
 	}
 }
