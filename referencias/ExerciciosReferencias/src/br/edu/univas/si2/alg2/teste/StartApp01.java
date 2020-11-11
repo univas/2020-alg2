@@ -1,6 +1,6 @@
 package br.edu.univas.si2.alg2.teste;
 
-public class TesteMain {
+public class StartApp01 {
 
 	public static void main(String[] args) {
 		
