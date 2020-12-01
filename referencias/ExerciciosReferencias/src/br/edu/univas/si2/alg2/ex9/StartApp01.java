@@ -34,19 +34,17 @@ public class StartApp01 {
 	}
 
 	/**
-	 * aloca um quadrado e seus pontos, lê do teclado os pontos e insere o quadrado
-	 * na região
+	 * aloca um quadrado e seus pontos, lê os pontos do teclado e insere no retângulo
 	 * 
-	 * @param regiao
 	 */
 	public static Retangulo lerQuadrado() {
 		//System.out.println("Lendo quadrado...");
-		Retangulo quadrado = new Retangulo();
+		Retangulo retangulo = new Retangulo();
 
-		quadrado.pInicial = lerPonto();
-		quadrado.pFinal = lerPonto();
+		retangulo.pInicial = lerPonto();
+		retangulo.pFinal = lerPonto();
 
-		return quadrado;
+		return retangulo;
 	}
 
 	/**
